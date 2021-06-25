@@ -4,17 +4,17 @@ declare(strict_types=1);
 namespace KennelApi\Application\Mappers\CustomMappers;
 use AutoMapperPlus\CustomMapper\CustomMapper;
 use KennelApi\Application\DTO\AddCategoryDTO;
-use KennelApi\Domain\CategoryDomainModel;
+use KennelApi\Domain\CategoryModel;
 
-class AddCategoryDTOToCategoryDomainModel extends CustomMapper
+class AddCategoryDTOToCategoryModel extends CustomMapper
 {
 
     /**
      * @param AddCategoryDTO $source
-     * @param CategoryDomainModel $destination
-     * @return CategoryDomainModel
+     * @param CategoryModel $destination
+     * @return CategoryModel
      */
-    public function mapToObject($source, $destination): CategoryDomainModel
+    public function mapToObject($source, $destination): CategoryModel
     {
         $destination->name = $source->name;
         $destination->parentId = $source->parentId;

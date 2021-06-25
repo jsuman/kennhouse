@@ -19,7 +19,7 @@ doctrine:
 
             KennelApi:
                 is_bundle: false
-                type: annotation
-                dir: '%kernel.project_dir%/src/KennelApi/Domain/Entities'
+                type: xml
+                dir: '%kernel.project_dir%/src/KennelApi/Infrastructure/DoctrineMapping'
                 prefix: 'KennelApi\Domain\Entities'
-                alias: KennelApi
+                alias: KennelApi\Domain\Entities

@@ -8,7 +8,7 @@ use AutoMapperPlus\Exception\UnregisteredMappingException;
 use AutoMapperPlus\MapperInterface;
 use KennelApi\Application\DTO\AddCategoryDTO;
 use KennelApi\Application\DTO\CategoryOutDTO;
-use KennelApi\Domain\CategoryDomainModel;
+use KennelApi\Domain\CategoryModel;
 use KennelApi\Domain\ICategoryRepository;
 
 class CategoryService
@@ -45,7 +45,7 @@ class CategoryService
     {
         return $this->repository->addCategory(
             $this->mapper->map($addCategoryDTO,
-                CategoryDomainModel::class
+                CategoryModel::class
             )
         );
     }

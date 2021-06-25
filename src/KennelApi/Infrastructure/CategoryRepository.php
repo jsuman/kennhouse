@@ -5,7 +5,7 @@ namespace KennelApi\Infrastructure;
 
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
-use KennelApi\Domain\CategoryDomainModel;
+use KennelApi\Domain\CategoryModel;
 use KennelApi\Domain\Entities\Category;
 use KennelApi\Domain\ICategoryRepository;
 use Symfony\Component\Config\Definition\Exception\Exception;
@@ -32,7 +32,7 @@ class CategoryRepository extends ServiceEntityRepository implements ICategoryRep
         }
     }
 
-    public function addCategory(CategoryDomainModel $categoryDomainModel): bool
+    public function addCategory(CategoryModel $categoryDomainModel): bool
     {
         // TODO: Implement addCategory() method.
     }

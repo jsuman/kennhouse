@@ -7,9 +7,9 @@ use AutoMapperPlus\AutoMapperPlusBundle\AutoMapperConfiguratorInterface;
 use AutoMapperPlus\Configuration\AutoMapperConfigInterface;
 use KennelApi\Application\DTO\AddCategoryDTO;
 use KennelApi\Application\DTO\CategoryOutDTO;
-use KennelApi\Application\Mappers\CustomMappers\AddCategoryDTOToCategoryDomainModel;
+use KennelApi\Application\Mappers\CustomMappers\AddCategoryDTOToCategoryModel;
 use KennelApi\Application\Mappers\CustomMappers\CategoryToCategoryOutDTO;
-use KennelApi\Domain\CategoryDomainModel;
+use KennelApi\Domain\CategoryModel;
 use KennelApi\Domain\Entities\Category;
 
 class CategoryMapperConfig implements AutoMapperConfiguratorInterface
@@ -21,7 +21,7 @@ class CategoryMapperConfig implements AutoMapperConfiguratorInterface
     {
         $config->registerMapping(Category::class, CategoryOutDTO::class)
             ->useCustomMapper(new CategoryToCategoryOutDTO());
-        $config->registerMapping(AddCategoryDTO::class, CategoryDomainModel::class)
-            ->useCustomMapper(new AddCategoryDTOToCategoryDomainModel());
+        $config->registerMapping(AddCategoryDTO::class, CategoryModel::class)
+            ->useCustomMapper(new AddCategoryDTOToCategoryModel());
     }
 }

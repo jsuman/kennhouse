@@ -5,5 +5,5 @@ namespace KennelApi\Domain;
 
 interface ICategoryRepository {
     public function getCategories(): array;
-    public function addCategory(CategoryDomainModel $categoryDomainModel): bool;
+    public function addCategory(CategoryModel $categoryDomainModel): bool;
 }

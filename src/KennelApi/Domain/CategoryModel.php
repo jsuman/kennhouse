@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace KennelApi\Domain;
 
-class CategoryDomainModel
+class CategoryModel
 {
     public ?int $id;
 

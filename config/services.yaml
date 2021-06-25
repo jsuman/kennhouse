@@ -28,3 +28,6 @@ services:
         tags: ['controller.service_arguments']
     KennelApi\:
         resource: '../src/KennelApi/'
+
+    App\Fixtures\:
+        resource: '../fixtures/'

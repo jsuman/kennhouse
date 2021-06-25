@@ -4,38 +4,17 @@ declare(strict_types=1);
 namespace KennelApi\Domain\Entities;
 
 use DateTimeInterface;
-use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass="KennelApi\Infrastructure\CategoryRepository")
- */
 class Category
 {
-    /**
-     * @ORM\Id()
-     * @ORM\GeneratedValue()
-     * @ORM\Column(type="integer")
-     */
     private int $id;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
     private string $name;
 
-    /**
-     * @ORM\Column(type="integer")
-     */
     private int $parentId;
 
-    /**
-     * @ORM\Column(type="datetime", options={"default": "CURRENT_TIMESTAMP"})
-     */
     private ?DateTimeInterface $created;
 
-    /**
-     * @ORM\Column(type="datetime", nullable=true, options={"default": "CURRENT_TIMESTAMP"})
-     */
     private ?DateTimeInterface $deleted = null;
 
     public function getId(): ?int
