@@ -28,17 +28,18 @@ class CategoryController extends AbstractController
 
     /**
      * @param Request $request
-     * @return JsonResponse|bool
      * @throws UnregisteredMappingException
      */
-    public function addCategory(Request $request): JsonResponse | bool
+    public function addCategory(Request $request): JsonResponse
     {
         $addCategoryDTO = $this->serializer->deserialize($request->getContent(), AddCategoryDTO::class, 'json');
         $errors = $this->validator->validate($addCategoryDTO);
         if(count($errors) > 0) {
             return $this->json(['result' => new Response((string) $errors)]);
         }
-       return $this->service->addCategory($addCategoryDTO);
+       return $this->json(
+           $this->service->addCategory($addCategoryDTO)
+       );
     }
 
     /**
